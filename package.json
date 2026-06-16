@@ -1,0 +1,29 @@
+{
+  "name": "opfs-utils",
+  "version": "1.0.0",
+  "description": "Utilities for interacting with the OPFS origin private file system.",
+  "keywords": [
+    "OPFS",
+    "origin",
+    "private",
+    "file",
+    "system",
+    "browser",
+    "storage"
+  ],
+  "homepage": "https://github.com/grant-king/opfs-utils#readme",
+  "bugs": {
+    "url": "https://github.com/grant-king/opfs-utils/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grant-king/opfs-utils.git"
+  },
+  "license": "CC0-1.0",
+  "author": "Grant King",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  }
+}
