@@ -1,6 +1,11 @@
 import assert from 'node:assert'
-import { get_opfs_info } from '../index.js'
+import { import_test } from 'opfs-utils'
 import test from 'node:test'
+
+test('import test', (t) => {
+    const result = import_test()
+    assert.strictEqual(result, true)
+})
 
 test('help test', (t) => {
     console.log("\n::::\n")
