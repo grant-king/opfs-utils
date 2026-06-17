@@ -272,6 +272,10 @@ async function store_text(
 FileSystemFileHandle
 ```
 
+#### store_bytes
+
+:: store text using a `FileSystemFileHandle` object and an ArrayBuffer or Uint8Array
+
 ```js
 async function store_bytes(
     file_handle=FileSystemFileHandle, 
@@ -281,10 +285,13 @@ async function store_bytes(
 FileSystemFileHandle
 ```
 
+#### get_directory_contents_json
+
+:: get a JSON representation containing directory names and nested file names with their `File` objects that are stored within a directory given its `FileSystemDirectoryHandle`
+
 ```js
 async function get_directory_contents_json(
-    file_handle=FileSystemFileHandle, 
-    text="Hello text"
+    directory_handle=FileSystemDirectoryHandle
     )
 =>
 {
@@ -302,6 +309,10 @@ async function get_directory_contents_json(
     },
 }
 ```
+
+#### copy_full_directory
+
+:: recursively copy the contents of a source directory to an output directory, given a `FileSystemFileHandle` for each directory.
 
 ```js
 async function copy_full_directory(
