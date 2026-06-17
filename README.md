@@ -14,9 +14,9 @@ Contributions are welcome! If you do something and think that the changes would 
 
 ---
 
-:|:|:|::|:|:|::|:|:|::|:|:|:
+:|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|:
 
-:|:|:|::|:|:|::|:|:|::|:|:|:
+:|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|:
 
 ---
 
@@ -102,6 +102,24 @@ for (const directory_name of directory_list) {
     )
 }
 console.log(current_handle)
+
+// expected output:
+// 
+
+
+```
+
+* `...getFileHandle()`
+
+```js
+// log the handle for a new file named demo_file.txt
+
+const opfs_root = await navigator.storage.getDirectory()
+const file_handle = await opfs_root.getFileHandle(
+    "demo_file.txt", { create: true }
+)
+
+console.log(file_handle)
 
 // expected output:
 // 
