@@ -2,6 +2,10 @@
  * These are some useful utilites for working with the OPFS
  */
 
+export function import_test(){
+    return true
+}
+
 export async function get_opfs_info() {
     const storage_info = await navigator.storage.estimate()
     const info = {

@@ -1,5 +1,6 @@
 
 import {
+    import_test,
     get_opfs_info,
     get_directory_handle,
     get_file_handle,
@@ -10,6 +11,7 @@ import {
 } from './opfs_utils.js';
 
 export {
+    import_test,
     get_opfs_info,
     get_directory_handle,
     get_file_handle,
