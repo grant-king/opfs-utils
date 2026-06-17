@@ -126,3 +126,65 @@ console.log(file_handle)
 
 
 ```
+
+* `...createWritable()` and `...getFile()`
+
+```js
+// write text to demo_file.txt in the OPFS root directory and log the file object
+
+const opfs_root = await navigator.storage.getDirectory()
+const file_handle = await opfs_root.getFileHandle(
+    "demo_file.txt", { create: true }
+)
+
+const text = "Hello OPFS"
+const text_encoder = new TextEncoder()
+const data_buffer = text_encoder.encode(text)
+const file_writeable = await file_handle.createWritable()
+await file_writeable.write(data_buffer)
+await file_writeable.close()
+
+const file = await file_handle.getFile()
+
+console.log(file)
+
+// expected output:
+// 
+
+
+```
+
+* `...createWritable()` and `...getFile()` (to copy bytes)
+
+```js
+// copy demo_file.txt to demo_file_2.txt in the OPFS root directory and then log the directory values
+
+const opfs_root = await navigator.storage.getDirectory()
+
+const file_handle_1 = await opfs_root.getFileHandle(
+    "demo_file.txt", { create: true }
+)
+
+const file_handle_2 = await opfs_root.getFileHandle(
+    "demo_file_copy.txt", { create: true }
+)
+
+const text = "Hello OPFS"
+const text_encoder = new TextEncoder()
+const data_buffer = text_encoder.encode(text)
+const file_writeable_1 = await file_handle.createWritable()
+await file_writeable_1.write(data_buffer)
+await file_writeable_1.close()
+const file_1 = await file_handle_1.getFile()
+
+const file_writeable_2 = await file_handle_2.createWritable()
+await file_writeable_2.write(await file_1.arrayBuffer())
+await file_writeable_2.close()
+
+console.log(await opfs_root.values())
+
+// expected output:
+// 
+
+
+```
