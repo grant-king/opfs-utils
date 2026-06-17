@@ -219,7 +219,9 @@ opfs-utils package includes the following functions that compose the built-in OP
 
 ### Function Definitions
 
-#### get_opfs_info :: get storage info in a flat object with descriptive keys
+#### get_opfs_info
+
+:: get storage info in a flat object with descriptive keys
 
 ```js
 async function get_opfs_info() 
@@ -232,7 +234,9 @@ async function get_opfs_info()
 }
 ```
 
-#### get_directory_handle :: get a `FileSystemDirectoryHandle` object using a list of directory name strings
+#### get_directory_handle
+
+:: get a `FileSystemDirectoryHandle` object using a list of directory name strings
 
 ```js
 async function get_directory_handle(
@@ -242,7 +246,9 @@ async function get_directory_handle(
 FileSystemDirectoryHandle
 ```
 
-#### get_file_handle :: get a `FileSystemFileHandle` object using a list of directory name strings and a file name string
+#### get_file_handle
+
+:: get a `FileSystemFileHandle` object using a list of directory name strings and a file name string
 
 ```js
 async function get_file_handle(
@@ -253,7 +259,9 @@ async function get_file_handle(
 FileSystemFileHandle
 ```
 
-#### store_text :: store text using a `FileSystemFileHandle` object and a string of text
+#### store_text
+
+:: store text using a `FileSystemFileHandle` object and a string of text
 
 ```js
 async function store_text(
