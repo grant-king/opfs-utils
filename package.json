@@ -1,6 +1,6 @@
 {
   "name": "opfs-utils",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "Utilities for interacting with the OPFS origin private file system.",
   "keywords": [
     "OPFS",
