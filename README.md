@@ -130,7 +130,8 @@ console.log(file_handle)
 * `...createWritable()` and `...getFile()`
 
 ```js
-// write text to demo_file.txt in the OPFS root directory and log the file object
+// write text to demo_file.txt in the OPFS root directory 
+// and log the file object
 
 const opfs_root = await navigator.storage.getDirectory()
 const file_handle = await opfs_root.getFileHandle(
@@ -157,7 +158,8 @@ console.log(file)
 * `...createWritable()` and `...getFile()` (to copy bytes)
 
 ```js
-// copy demo_file.txt to demo_file_2.txt in the OPFS root directory and then log the directory values
+// copy demo_file.txt to demo_file_2.txt in the OPFS root directory 
+// and then log the directory values
 
 const opfs_root = await navigator.storage.getDirectory()
 
@@ -187,4 +189,55 @@ console.log(await opfs_root.values())
 // 
 
 
+```
+
+---
+
+:|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|:
+
+:|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|:
+
+---
+
+## Functions from opfs-utils
+
+opfs-utils package includes the following functions that compose the built-in OPFS methods shown above.
+
+* get_opfs_info
+
+* get_directory_handle
+
+* get_file_handle
+
+* store_text
+
+* store_bytes
+
+* get_directory_contents_json
+
+* copy_full_directory
+
+### Function Definitions
+
+```js
+async function get_opfs_info() 
+=> 
+{
+    "storage_total": quota,
+    "storage_used": usage,
+    "usage_cache": usageDetails.caches,
+    "usage_filesystem": usageDetails.fileSystem,
+}
+```
+
+```js
+async function get_directory_handle(directory_list=["dirname", "subdir"]) 
+=> 
+FileSystemDirectoryHandle
+```
+
+```js
+async function get_file_handle(directory_list=["for", "example"], filename="ie.txt")
+=>
+FileSystemFileHandle
 ```
