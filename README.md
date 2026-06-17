@@ -312,12 +312,12 @@ async function get_directory_contents_json(
 
 #### copy_full_directory
 
-:: recursively copy the contents of a source directory to an output directory, given a `FileSystemFileHandle` for each directory.
+:: recursively copy the contents of a source directory to an output directory, given a `FileSystemDirectoryHandle` for each directory.
 
 ```js
 async function copy_full_directory(
-    source_dir_handle=FileSystemFileHandle, 
-    output_dir_handle=FileSystemFileHandle, 
+    source_dir_handle=FileSystemDirectoryHandle, 
+    output_dir_handle=FileSystemDirectoryHandle, 
     )
 =>
 none
