@@ -50,8 +50,7 @@ export async function store_bytes(file_handle, bytes) {
     return file_handle
 }
 
-export async function get_opfs_contents_json(directory_list) {
-    const directory_handle = await get_directory_handle(directory_list)
+export async function get_opfs_contents_json(directory_handle) {
     const directory_representation = {}
     for await (const entry of directory_handle.values()) {
         //console.log("directory entry", entry)
