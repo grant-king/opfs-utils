@@ -10,7 +10,15 @@ The goal of this package is to help web developers utilize the power of OPFS as 
 
 For production, please consider writing your own custom OPFS utilities package that uses the built-in methods and can be made to suit your particular needs.
 
-Contributions are welcome! If you modify the code and think that the changes would be useful to everyone, please do submit a PR. Or fork your own thing and let me know about your discoveries.
+Contributions are welcome! If you do something and think that the changes would be useful to everyone, please do submit a PR. Or fork your own thing and let me know about your discoveries.
+
+---
+
+:|:|:|::|:|:|::|:|:|::|:|:|:
+
+:|:|:|::|:|:|::|:|:|::|:|:|:
+
+---
 
 ## Introduction
 
@@ -18,9 +26,9 @@ Contributions are welcome! If you modify the code and think that the changes wou
 
 The web's File System API extends device file management capabilities to the web browser. The OPFS is a powerful storage endpoint managed by the client's browser that is easily accessible through its low-level web APIs.
 
-**Operations within the OPFS are fast and do not involve any user permissions.**
-
 Here are some important characteristics of the OPFS:
+
+* **Operations within the OPFS are fast and do not involve any user permissions.**
 
 * The OPFS is private to the origin of the page where the interfaces are called.
 
@@ -36,8 +44,7 @@ You can utilize the power of the OPFS by employing a few built-in JavaScript met
 
 ### Working with OPFS using built-in methods
 
-
-`navigator.storage.estimate()`
+* `navigator.storage.estimate()`
 
 ```js
 // Log information about the origin's private browser storage usage
@@ -50,7 +57,7 @@ console.log(storage_info)
 
 ```
 
-`navigator.storage.getDirectory()`
+* `navigator.storage.getDirectory()`
 
 ```js
 // log the OPFS root directory
@@ -63,7 +70,7 @@ console.log(opfs_root)
 
 ```
 
-`...getDirectoryHandle()`
+* `...getDirectoryHandle()`
 
 ```js
 // log the handle for a new nested directory
@@ -81,7 +88,7 @@ console.log(current_handle)
 
 ```
 
-`...getDirectoryHandle()` (for a nested subdirectory)
+* `...getDirectoryHandle()` (for a nested subdirectory)
 
 ```js
 // log the handle for a new double-nested directory
