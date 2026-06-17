@@ -1,6 +1,16 @@
 # opfs-utils
 
-A JavaScript package with utilities for working with the OPFS origin private file system.
+opfs-utils is a JavaScript package with utilities for working with the OPFS origin private file system.
+
+This package isn't to a stable version yet. Please use it carefully.
+
+opfs-utils does not have any dependencies.
+
+The goal of this package is to help web developers utilize the power of OPFS as quickly and easily as possible when their energy for learning is being spread thin.
+
+For production, please consider writing your own custom OPFS utilities package that uses the built-in methods and can be made to suit your particular needs.
+
+Contributions are welcome! If you modify the code and think that the changes would be useful to everyone, please do submit a PR. Or fork your own thing and let me know about your discoveries.
 
 ## Introduction
 
