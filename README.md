@@ -231,13 +231,18 @@ async function get_opfs_info()
 ```
 
 ```js
-async function get_directory_handle(directory_list=["dirname", "subdir"]) 
+async function get_directory_handle(
+    directory_list=["dirname", "subdir"]
+    ) 
 => 
 FileSystemDirectoryHandle
 ```
 
 ```js
-async function get_file_handle(directory_list=["for", "example"], filename="ie.txt")
+async function get_file_handle(
+    directory_list=["for", "example"], 
+    filename="ie.txt"
+    )
 =>
 FileSystemFileHandle
 ```
