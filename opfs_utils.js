@@ -61,7 +61,7 @@ export async function get_directory_contents_json(directory_handle) {
         if (entry.kind == 'file') {
             directory_representation[entry.name] = await entry.getFile()
         } else if (entry.kind == 'directory') {
-            directory_representation[entry.name] = await get_opfs_contents_json([...directory_list, entry.name])
+            directory_representation[entry.name] = await get_directory_contents_json(entry)
         }
     }
     return directory_representation
