@@ -2,7 +2,7 @@
  * These are some useful utilites for working with the OPFS
  */
 
-export function import_test(){
+export function import_test() {
     return true
 }
 
