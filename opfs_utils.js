@@ -43,7 +43,6 @@ export async function store_text(file_handle, text) {
     const data_buffer = text_encoder.encode(text)
     await file_writeable.write(data_buffer)
     await file_writeable.close()
-    return file_handle
 }
 
 export async function store_bytes(file_handle, bytes) {
@@ -51,7 +50,6 @@ export async function store_bytes(file_handle, bytes) {
     const file_writeable = await file_handle.createWritable()
     await file_writeable.write(bytes)
     await file_writeable.close()
-    return file_handle
 }
 
 export async function get_directory_contents_json(directory_handle) {
