@@ -1,16 +1,89 @@
-# opfs-utils
+# opfs-utilities
 
-opfs-utils is a JavaScript package with utilities for working with the OPFS origin private file system.
+opfs-utilities is a JavaScript package with utilities for working with the OPFS origin private file system.
 
 This package isn't to a stable version yet. Please use it carefully.
 
-opfs-utils does not have any dependencies.
+opfs-utilities does not have any dependencies.
 
 The goal of this package is to help web developers utilize the power of OPFS as quickly and easily as possible when their energy for learning is being spread thin.
 
-For production, please consider writing your own custom OPFS utilities package that uses the built-in methods and can be made to suit your particular needs.
+For production, please consider writing your own custom OPFS utilities package that use the built-in methods and can be made to suit your particular needs.
 
 Contributions are welcome! If you do something and think that the changes would be useful to everyone, please do submit a PR. Or fork your own thing and let me know about your discoveries.
+
+---
+
+:|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|:
+
+:|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|:
+
+---
+
+## Quick Start
+
+`npm install opfs-utilities`
+
+```js
+import { 
+    get_opfs_info, 
+    get_directory_handle, 
+    get_file_handle, 
+    store_text, 
+    store_bytes, 
+    copy_full_directory,
+    get_directory_contents_json, 
+    } from 'opfs-utilities'
+
+utils_demo()
+
+async function utils_demo() {
+  
+  // get_opfs_info
+  var info = await get_opfs_info()
+  console.log(info)
+  
+  // get_directory_handle
+  const demo_dir_handle = await get_directory_handle(
+    ["opfs_utils", "demo"]
+    )
+  console.log(demo_dir_handle)
+  
+  // get_file_handle
+  const demo_file_handle = await get_file_handle(
+    ["opfs_utils", "demo"], "demo.txt"
+    )
+  console.log(demo_file_handle)
+  
+  // store_text
+  await store_text(demo_file_handle, "Hello OPFS")
+  
+  // store_bytes (accepts bytes or ArrayBuffer)
+  const demo_file_handle_copy = await get_file_handle(
+      ["opfs_utils", "demo"], "demo_copy.txt"
+    )
+  const demo_buffer = await demo_file.arrayBuffer()
+  await store_bytes(demo_file_handle_copy, demo_buffer)
+
+  // copy_full_directory
+  const demo_dir_handle_2 = await get_directory_handle(
+    ["opfs_utils", "demo_2"]
+    )
+  await copy_full_directory(demo_dir_handle, demo_dir_handle_2)
+  
+  // get_directory_contents_json
+  // get a JSON representation of full directory structure with File contents
+  const parent_dir_handle = await get_directory_handle(["opfs_utils"])
+  const dir_contents = await get_directory_contents_json(parent_dir_handle)
+  console.log(dir_contents)
+
+  // .remove
+  // recursively remove a directory
+  await parent_dir_handle.remove({recursive: true})
+  
+}
+
+```
 
 ---
 
@@ -201,7 +274,7 @@ console.log(await opfs_root.values())
 
 ## Functions from opfs-utils
 
-opfs-utils package includes the following functions that compose the built-in OPFS methods shown above.
+opfs-utilities package includes the following functions that compose the built-in OPFS methods shown above.
 
 * get_opfs_info
 
@@ -269,7 +342,7 @@ async function store_text(
     text="Hello text"
     )
 =>
-FileSystemFileHandle
+none
 ```
 
 #### store_bytes
@@ -282,7 +355,7 @@ async function store_bytes(
     bytes=ArrayBuffer||Uint8Array,
     )
 =>
-FileSystemFileHandle
+none
 ```
 
 #### get_directory_contents_json
