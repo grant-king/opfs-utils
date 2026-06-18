@@ -63,7 +63,7 @@ async function utils_demo() {
   const file_text = await file_obj.text()
   console.log(file_text)
   
-  // store_bytes (accepts bytes or ArrayBuffer)
+  // store_bytes (accepts bytes or ArrayBuffer or blob)
   const demo_file_handle_copy = await get_file_handle(
       ["opfs_utils", "demo"], "demo_copy.txt"
     )
