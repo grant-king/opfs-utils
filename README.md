@@ -12,6 +12,8 @@ For production, please consider writing your own custom OPFS utilities package t
 
 Contributions are welcome! If you do something and think that the changes would be useful to everyone, please do submit a PR. Or fork your own thing and let me know about your discoveries.
 
+[https://github.com/grant-king/opfs-utils](https://github.com/grant-king/opfs-utils)
+
 ---
 
 :|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|::|:|:|:
